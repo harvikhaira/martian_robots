@@ -1,4 +1,4 @@
-package com.harvikhaira.robots.service;
+package com.harvikhaira.robots.entities;
 
 public class Position {
     private int xCoordinate;

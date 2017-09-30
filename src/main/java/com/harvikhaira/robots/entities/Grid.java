@@ -1,6 +1,6 @@
-package com.harvikhaira.robots.service;
+package com.harvikhaira.robots.entities;
 
-import com.harvikhaira.robots.service.exception.GridDimensionException;
+import com.harvikhaira.robots.exception.GridDimensionException;
 
 public class Grid {
     private final int MAX_BOUNDARY_COORD = 50;
