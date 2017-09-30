@@ -1,0 +1,32 @@
+General notes:
+--------------
+
+* com.harvikhaira.robots.service.Grid is rectangular
+* Robots can move within
+* com.harvikhaira.robots.service.Position consists of:
+    * pair of integers - x co-ordinate, y co-ordinate
+    * direction/orientation (N, S, E, W)
+* Instruction is a string of letters:
+    * L - Left - turn 90 degrees left, stay on current co-ord
+    * R - Right - turn 90 degrees right, stay on current co-ord
+    * F - Forward - move forward one co-ord (depending on which direction)
+* Robots can move off the edge of the boundaries - lost forever
+* Those that are lost, the last valid position is recorded
+* An instruction to "move off" is ignored by current robot
+
+
+Input:
+* First input is the upper right co-ords
+    * lower left co-ords assumed to be (0,0)
+* Next line is robot positions
+    * 2 integers - x- & y-coords
+    * initial/starting position
+    * separated by whitespace on one line
+* Remaining inputs are instructions
+    * string of letters in any combo - L, R, F on one line
+* 2 lines per robot
+* Each robot is processed sequentially - one is completely processed prior to the next one starting
+* Max value for any co-ordinate is 50
+
+Output:
+*
