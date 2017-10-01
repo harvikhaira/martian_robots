@@ -16,10 +16,18 @@ public enum OrientationEnum {
     private final String rightValue;
 
     public OrientationEnum getLeftValue() {
-        return OrientationEnum.valueOf(this.leftValue);
+        return OrientationEnum.getEnum(this.leftValue);
     }
 
-    public OrientationEnum getRightValue() {
-        return OrientationEnum.valueOf(this.rightValue);
+    public OrientationEnum getRightValue() { return OrientationEnum.getEnum(this.rightValue); }
+
+    public static OrientationEnum getEnum(String val) {
+        for (OrientationEnum e : OrientationEnum.values()) {
+            if (val.equals(e.getValue())) {
+                return e;
+            }
+        }
+
+        return null;
     }
 }

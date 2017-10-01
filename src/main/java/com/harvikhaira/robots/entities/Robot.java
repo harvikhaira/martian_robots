@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Robot {
     private Position position;
-    private boolean lost = false;
+    private boolean lost;
 
     public Robot(String xCoord, String yCoord, String orientation) {
         int x = Integer.parseInt(xCoord);
@@ -19,6 +19,6 @@ public class Robot {
 
     @Override
     public String toString() {
-        return position.toString() + (this.lost ? " LOST" : "");
+        return position.toString() + (this.lost ? "LOST" : "");
     }
 }

@@ -12,11 +12,11 @@ public class Position {
 
     public Position(int xCoordinate, int yCoordinate, String orientation) {
         this.coordinates = new Coordinate(xCoordinate, yCoordinate);
-        this.orientation = OrientationEnum.valueOf(orientation);
+        this.orientation = OrientationEnum.getEnum(orientation);
     }
 
     @Override
     public String toString() {
-        return String.format("% % %", coordinates.getXCoordinate(), coordinates.getYCoordinate(), orientation.getValue());
+        return String.valueOf(coordinates.getXCoordinate()) + String.valueOf(coordinates.getYCoordinate()) + orientation.getValue();
     }
 }

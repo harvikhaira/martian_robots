@@ -10,16 +10,9 @@ public class CoordinateUtil {
         Coordinate maxCoords = grid.getTopRight();
         Coordinate coords = robotPosition.getCoordinates();
 
-        if (coords.getXCoordinate() < minCoords.getXCoordinate()
-                && coords.getXCoordinate() > maxCoords.getXCoordinate()) {
-            return false;
-        }
-
-        if(coords.getYCoordinate() < minCoords.getYCoordinate()
-                && coords.getYCoordinate() > maxCoords.getYCoordinate()) {
-            return false;
-        }
-
-        return true;
+        return coords.getXCoordinate() < minCoords.getXCoordinate()
+                || coords.getXCoordinate() > maxCoords.getXCoordinate()
+                || coords.getYCoordinate() < minCoords.getYCoordinate()
+                || coords.getYCoordinate() > maxCoords.getYCoordinate();
     }
 }

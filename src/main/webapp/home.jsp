@@ -27,7 +27,7 @@
         </div>
         <div id="output">
             <h2>Output:</h2>
-            <input type="text" id="inp_output" disabled="disabled" />
+            <textarea type="text" id="inp_output" disabled="disabled" ></textarea>
         </div>
 
         <script src="webjars/jquery/3.2.1/jquery.min.js" ></script>

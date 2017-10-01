@@ -6,10 +6,11 @@ $(document).ready(function() {
                 instructions: $("#inp_instructions").val()
             },
             success: function (resp) {
-                $("#inp_output").val(resp);
+                var output = resp.replace(/\n/g, "\r");
+                $("#inp_output").val(output);
             },
             error: function(e) {
-                alert('Error: '+e);
+                console.log('Error: robot processing error');
             }
         });
     });
