@@ -1,19 +1,25 @@
 package com.harvikhaira.robots.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public enum OrientationEnum {
-    NORTH("N", 0, 1),
-    SOUTH("S", 0, -1),
-    EAST("E", -1, 0),
-    WEST("W", 1, 0);
+    NORTH("N", "W", "E"),
+    SOUTH("S", "E", "W"),
+    EAST("E", "N", "S"),
+    WEST("W", "S", "N");
 
     private final String value;
-    //setup which direction on respective axis to go
-    private final int xCoordinate;
-    private final int yCoordinate;
+    private final String leftValue;
+    private final String rightValue;
 
-    OrientationEnum(String value, int xCoordinate, int yCoordinate) {
-        this.value = value;
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+    public OrientationEnum getLeftValue() {
+        return OrientationEnum.valueOf(this.leftValue);
+    }
+
+    public OrientationEnum getRightValue() {
+        return OrientationEnum.valueOf(this.rightValue);
     }
 }

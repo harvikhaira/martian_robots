@@ -16,4 +16,9 @@ public class Robot {
     public Robot(String[] setup) {
         this(setup[0], setup[1], setup[2]);
     }
+
+    @Override
+    public String toString() {
+        return position.toString() + (this.lost ? " LOST" : "");
+    }
 }

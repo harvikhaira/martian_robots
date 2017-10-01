@@ -1,8 +1,11 @@
 package com.harvikhaira.robots.service;
 
 import com.harvikhaira.robots.entities.Grid;
+import com.harvikhaira.robots.entities.Position;
 import com.harvikhaira.robots.entities.Robot;
 import com.harvikhaira.robots.exception.GridDimensionException;
+import com.harvikhaira.robots.utils.CoordinateUtil;
+import com.harvikhaira.robots.utils.InstructionUtil;
 
 import java.util.Arrays;
 
@@ -11,9 +14,10 @@ public class RobotService {
     private static Grid grid;
 
     public String process(String instruction) {
+        final StringBuilder output = new StringBuilder();
         if(instruction != null && instruction.length() > 0) {
             //split the input by a new line;
-            String[] instructions = instruction.split("\\n");
+            final String[] instructions = instruction.split("\\n");
 
             try {
                 //first instruction is the grid boundary
@@ -22,7 +26,8 @@ public class RobotService {
                 for (int i = 1; i < instructions.length; i += 3 /*2*/) {
                     //check for any blank lines - instruction separators
                     if(instructions[i].length() > 0) {
-                        processInstructions(instructions[i], instructions[i + 1]);
+                        final Robot robot = processInstructions(instructions[i], instructions[i + 1]);
+                        output.append(robot.toString() + "\n");
                     }
                 }
             } catch (GridDimensionException e) {
@@ -30,32 +35,34 @@ public class RobotService {
             }
         }
 
-        //TEMP output
-        return "processed!";
+        return output.toString();
     }
 
     private void setupGrid(String coords) throws GridDimensionException {
-        String[] vals = coords.split("");
+        final String[] vals = coords.split("");
         grid = new Grid(vals[0], vals[1]);
     }
 
-    private void processInstructions(String startingPos, String instruction) {
-        String[] robotInit = startingPos.split("");
-        Robot robot = new Robot(robotInit);
+    private Robot processInstructions(String startingPos, String instruction) {
+        final String[] startingCoords = startingPos.split("");
+        final Robot robot = new Robot(startingCoords);
 
-        String[] instrucions = instruction.split("");
-        Arrays.stream(instrucions)
+        final String[] instructions = instruction.split("");
+        Arrays.stream(instructions)
                 .forEach(i -> {
                     //create new position
-                    //Position newPosition = new Position();
-
                     //check instruction - turn L/R or move forward
+                    final Position newPosition = InstructionUtil.processInstruction(robot, i);
 
                     //set robot's position to be new position
-                    //robot.setPosition(newPosition);
+                    //updating the orientation or the coordinates
+                    robot.setPosition(newPosition);
 
                     //check whether new position is within grid boundary
                         //mark robot as lost if invalid co-ordinates
+                    robot.setLost(CoordinateUtil.isRobotLost(grid, newPosition));
                 });
+
+        return robot;
     }
 }

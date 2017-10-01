@@ -2,8 +2,10 @@ package com.harvikhaira.robots.entities;
 
 import com.harvikhaira.robots.enums.OrientationEnum;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Position {
     private Coordinate coordinates;
     private OrientationEnum orientation;
@@ -13,7 +15,8 @@ public class Position {
         this.orientation = OrientationEnum.valueOf(orientation);
     }
 
-    public Position() {
-
+    @Override
+    public String toString() {
+        return String.format("% % %", coordinates.getXCoordinate(), coordinates.getYCoordinate(), orientation.getValue());
     }
 }
