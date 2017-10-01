@@ -1,5 +1,7 @@
 package com.harvikhaira.robots.servlet;
 
+import com.harvikhaira.robots.service.RobotService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,10 @@ public class RequestServlet extends HttpServlet {
         response.setHeader("Cache-Control", "no-cache");
         response.setHeader("Pragma", "no-cache");
 
-        //process instructions...
+        //process instructions
+        String output = new RobotService().process(req.getParameter("instructions"));
+
+        response.setContentType("text/plain");
+        response.getWriter().write(output);
     }
 }

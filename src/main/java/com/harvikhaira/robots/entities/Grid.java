@@ -1,15 +1,19 @@
 package com.harvikhaira.robots.entities;
 
 import com.harvikhaira.robots.exception.GridDimensionException;
+import lombok.Data;
 
+@Data
 public class Grid {
     private final int MAX_BOUNDARY_COORD = 50;
-    private final Position bottomLeft = new Position(0,0);
-    private Position topRight;
+    private final Coordinate bottomLeft = new Coordinate(0,0);
+    private Coordinate topRight;
 
-    public Grid(final int xCoord, final int yCoord) throws GridDimensionException {
-        if(xCoord <= MAX_BOUNDARY_COORD && yCoord <= MAX_BOUNDARY_COORD) {
-            this.topRight = new Position(xCoord, yCoord);
+    public Grid(final String xCoord, final String yCoord) throws NumberFormatException, GridDimensionException {
+        int x = Integer.parseInt(xCoord);
+        int y = Integer.parseInt(yCoord);
+        if(x <= MAX_BOUNDARY_COORD && y <= MAX_BOUNDARY_COORD) {
+            this.topRight = new Coordinate(x, y);
         } else {
             throw new GridDimensionException();
         }

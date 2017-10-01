@@ -1,11 +1,19 @@
 package com.harvikhaira.robots.entities;
 
-public class Position {
-    private int xCoordinate;
-    private int yCoordinate;
+import com.harvikhaira.robots.enums.OrientationEnum;
+import lombok.Data;
 
-    public Position(int xCoordinate, int yCoordinate) {
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+@Data
+public class Position {
+    private Coordinate coordinates;
+    private OrientationEnum orientation;
+
+    public Position(int xCoordinate, int yCoordinate, String orientation) {
+        this.coordinates = new Coordinate(xCoordinate, yCoordinate);
+        this.orientation = OrientationEnum.valueOf(orientation);
+    }
+
+    public Position() {
+
     }
 }
