@@ -1,9 +1,9 @@
-package com.harvikhaira.robots.utils;
+package main.java.harvikhaira.robots.utils;
 
-import com.harvikhaira.robots.entities.Coordinate;
-import com.harvikhaira.robots.entities.Position;
-import com.harvikhaira.robots.enums.InstructionEnum;
-import com.harvikhaira.robots.enums.OrientationEnum;
+import main.java.harvikhaira.robots.entities.Coordinate;
+import main.java.harvikhaira.robots.entities.Position;
+import main.java.harvikhaira.robots.enums.InstructionEnum;
+import main.java.harvikhaira.robots.enums.OrientationEnum;
 
 public class InstructionUtil {
     public static Position processInstruction(Position current, String instruction) {

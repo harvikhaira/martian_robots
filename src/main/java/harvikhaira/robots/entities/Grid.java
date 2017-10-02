@@ -1,6 +1,6 @@
-package com.harvikhaira.robots.entities;
+package main.java.harvikhaira.robots.entities;
 
-import com.harvikhaira.robots.exception.GridDimensionException;
+import main.java.harvikhaira.robots.exception.GridDimensionException;
 import lombok.Data;
 
 @Data

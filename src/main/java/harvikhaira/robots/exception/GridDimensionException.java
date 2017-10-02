@@ -1,4 +1,4 @@
-package com.harvikhaira.robots.exception;
+package main.java.harvikhaira.robots.exception;
 
 public class GridDimensionException extends Exception {
     public GridDimensionException() {

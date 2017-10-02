@@ -1,6 +1,6 @@
-package com.harvikhaira.robots.servlet;
+package main.java.harvikhaira.robots.servlet;
 
-import com.harvikhaira.robots.service.RobotService;
+import main.java.harvikhaira.robots.service.RobotService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

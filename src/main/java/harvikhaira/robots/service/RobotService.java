@@ -1,11 +1,11 @@
-package com.harvikhaira.robots.service;
+package main.java.harvikhaira.robots.service;
 
-import com.harvikhaira.robots.entities.Grid;
-import com.harvikhaira.robots.entities.Position;
-import com.harvikhaira.robots.entities.Robot;
-import com.harvikhaira.robots.exception.GridDimensionException;
-import com.harvikhaira.robots.utils.CoordinateUtil;
-import com.harvikhaira.robots.utils.InstructionUtil;
+import main.java.harvikhaira.robots.entities.Grid;
+import main.java.harvikhaira.robots.entities.Position;
+import main.java.harvikhaira.robots.entities.Robot;
+import main.java.harvikhaira.robots.exception.GridDimensionException;
+import main.java.harvikhaira.robots.utils.CoordinateUtil;
+import main.java.harvikhaira.robots.utils.InstructionUtil;
 
 import java.util.Arrays;
 

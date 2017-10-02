@@ -1,4 +1,4 @@
-package com.harvikhaira.robots.launch;
+package main.java.harvikhaira.robots.launch;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;

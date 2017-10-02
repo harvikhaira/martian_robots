@@ -15,7 +15,6 @@
     <lombok.version>1.16.16</lombok.version>
     <jquery.version>3.2.1</jquery.version>
     <junit.version>4.12</junit.version>
-    <!--<guice.version>4.1.0</guice.version>-->
   </properties>
 
   <dependencies>
@@ -70,15 +69,10 @@
       <artifactId>jquery</artifactId>
       <version>${jquery.version}</version>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>com.google.inject</groupId>-->
-      <!--<artifactId>guice</artifactId>-->
-      <!--<version>${guice.version}</version>-->
-    <!--</dependency>-->
-
   </dependencies>
 
   <build>
+    <sourceDirectory>src</sourceDirectory>
     <finalName>Robots</finalName>
     <plugins>
       <plugin>
@@ -91,6 +85,18 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <url>http://localhost:8080/manager/text</url>
+          <server>TomcatServer</server>
+          <path>/robots</path>
+          <username>admin</username>
+          <password>admin</password>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>appassembler-maven-plugin</artifactId>
         <version>2.0.0</version>
@@ -98,7 +104,7 @@
           <assembleDirectory>target</assembleDirectory>
           <programs>
             <program>
-              <mainClass>com.harvikhaira.robots.launch.StartApp</mainClass>
+              <mainClass>StartApp</mainClass>
               <name>webapp</name>
             </program>
           </programs>

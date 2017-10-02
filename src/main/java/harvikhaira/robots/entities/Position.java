@@ -1,6 +1,6 @@
-package com.harvikhaira.robots.entities;
+package main.java.harvikhaira.robots.entities;
 
-import com.harvikhaira.robots.enums.OrientationEnum;
+import main.java.harvikhaira.robots.enums.OrientationEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

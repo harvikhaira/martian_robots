@@ -1,4 +1,4 @@
-package com.harvikhaira.robots.enums;
+package main.java.harvikhaira.robots.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

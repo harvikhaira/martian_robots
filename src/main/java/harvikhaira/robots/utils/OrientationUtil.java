@@ -1,7 +1,7 @@
-package com.harvikhaira.robots.utils;
+package main.java.harvikhaira.robots.utils;
 
-import com.harvikhaira.robots.entities.Coordinate;
-import com.harvikhaira.robots.enums.OrientationEnum;
+import main.java.harvikhaira.robots.entities.Coordinate;
+import main.java.harvikhaira.robots.enums.OrientationEnum;
 
 public class OrientationUtil {
     public static Coordinate getNewCoordinates(OrientationEnum newOrientation, Coordinate currentCoordinates) {

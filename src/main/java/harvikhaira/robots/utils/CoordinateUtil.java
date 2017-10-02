@@ -1,8 +1,8 @@
-package com.harvikhaira.robots.utils;
+package main.java.harvikhaira.robots.utils;
 
-import com.harvikhaira.robots.entities.Coordinate;
-import com.harvikhaira.robots.entities.Grid;
-import com.harvikhaira.robots.entities.Position;
+import main.java.harvikhaira.robots.entities.Coordinate;
+import main.java.harvikhaira.robots.entities.Grid;
+import main.java.harvikhaira.robots.entities.Position;
 
 public class CoordinateUtil {
     public static boolean isRobotLost(Grid grid, Position robotPosition) {

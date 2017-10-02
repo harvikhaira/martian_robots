@@ -1,4 +1,4 @@
-package com.harvikhaira.robots.entities;
+package main.java.harvikhaira.robots.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
